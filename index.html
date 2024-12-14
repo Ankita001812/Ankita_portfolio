@@ -118,12 +118,80 @@
 		.zoom-effect:hover {
 			transform: scale(1.1);
 		}
+
+
+		/* Hide the default cursor */
+body {
+  cursor: none;
+  /* overflow: hidden;  */
+}
+
+/* Main cursor */
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  background: #e28ec3; /* Cursor color */
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 1000;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out;
+}
+
+/* Cursor trail or effect */
+.custom-cursor-trail {
+  width: 40px;
+  height: 40px;
+  background: rgba(192, 97, 165, 0.176); /* Semi-transparent trail */
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s ease-out;
+}
+
 	</style>
 
 
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+	<div class="custom-cursor"></div>
+	<div class="custom-cursor-trail"></div>
+	<script>
+		const cursor = document.querySelector('.custom-cursor');
+    const trail = document.querySelector('.custom-cursor-trail');
+
+// Update cursor position
+document.addEventListener('mousemove', (e) => {
+  const { clientX: x, clientY: y } = e;
+
+  // Move the main cursor
+  cursor.style.transform = `translate(${x}px, ${y}px)`;
+
+  // Add a delay effect for the trail
+  setTimeout(() => {
+    trail.style.transform = `translate(${x}px, ${y}px)`;
+  }, 100); // Adjust delay for smoother trail
+});
+
+// Cursor click effect
+document.addEventListener('mousedown', () => {
+  cursor.style.transform += ' scale(0.8)';
+  trail.style.transform += ' scale(1.2)';
+});
+
+document.addEventListener('mouseup', () => {
+  cursor.style.transform = cursor.style.transform.replace(' scale(0.8)', '');
+  trail.style.transform = trail.style.transform.replace(' scale(1.2)', '');
+});
+
+
+	</script>
+
 
 
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
