@@ -153,28 +153,73 @@
 			transition: transform 0.2s ease-out;
 		}
 
-		.logo-preview {
+
+
+
+
+		/* Flip Card Container for Alignment */
+		.flip-card-container {
+			display: flex;
+			gap: 20px;
+			justify-content: center;
+			flex-wrap: wrap;
+			margin: 20px;
+		}
+
+		/* Card Flip Styles */
+		.flip-card {
+			width: 150px;
+			height: 150px;
+			perspective: 1000px;
+			/* Provides the 3D effect */
+		}
+
+		.flip-card-inner {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			transform-style: preserve-3d;
+			transition: transform 0.6s ease-in-out;
+		}
+
+		.flip-card:hover .flip-card-inner {
+			transform: rotateY(180deg);
+		}
+
+		/* Front and Back of the Card */
+		.flip-card-front,
+		.flip-card-back {
 			position: absolute;
-			top: 100%;
-			left: 0;
-			opacity: 0;
-			transition: opacity 0.5s ease, transform 0.5s ease;
-			/* Smooth fade and slight movement */
-			transform: translateY(10px);
-			/* Initial position */
+			width: 100%;
+			height: 100%;
+			backface-visibility: hidden;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 18px;
+			font-weight: bold;
+			color: white;
+			border-radius: 10px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 		}
 
-		.logo-preview img {
-			max-width: 100px;
+		/* Front Side Styles */
+		.flip-card-front {
+			background-color: #724b58 ;
+		}
+
+		/* Back Side Styles */
+		.flip-card-back {
+			background-color: #f1f1f1;
+			transform: rotateY(180deg);
+			border: 1px solid #ddd;
+		}
+
+		.flip-card-back img {
+			max-width: 80%;
 			height: auto;
-			display: block;
-		}
-
-		.language-item:hover .logo-preview {
-			opacity: 1;
-			/* Make it visible */
-			transform: translateY(0);
-			/* Reset position for smooth movement */
+			border-radius: 5px;
 		}
 	</style>
 
@@ -213,23 +258,6 @@
 			trail.style.transform = trail.style.transform.replace(' scale(1.2)', '');
 		});
 
-
-
-		document.querySelectorAll(".language-item").forEach((item) => {
-			const logoPreview = item.querySelector(".logo-preview img");
-			const logoSrc = item.getAttribute("data-logo");
-
-			// Update the image source on hover
-			item.addEventListener("mouseover", () => {
-				const imagePath = `images/${logoSrc}`; // Adjust path if needed
-				logoPreview.src = imagePath; // Set the image source
-			});
-
-			// Clear the image source when not hovering
-			item.addEventListener("mouseout", () => {
-				logoPreview.src = ""; // Clear the image source
-			});
-		});
 
 
 
@@ -432,33 +460,48 @@
 					<div class="resume-wrap ftco-animate">
 						<span class="date">Languages</span>
 						<p class="mt-4">The languages I have learned till now:</p>
-						<ul>
-							<li class="language-item" data-logo="java.png">
-								Java
-								<div class="logo-preview">
-									<img id="logo-display-java" src="" alt="java">
+						<div class="flip-card-container">
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										Java
+									</div>
+									<div class="flip-card-back">
+										<img src="images/java.png" alt="Java Logo">
+									</div>
 								</div>
-							</li>
-							<li class="language-item" data-logo="javascript-logo.png">
-								JavaScript
-								<div class="logo-preview">
-									<img id="logo-display-js" src="" alt="Language Logo">
+							</div>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										JavaScript
+									</div>
+									<div class="flip-card-back">
+										<img src="images/javascript-logo.png" alt="JavaScript Logo">
+									</div>
 								</div>
-							</li>
-							<li class="language-item" data-logo="cpp-logo.png">
-								C++
-								<div class="logo-preview">
-									<img id="logo-display-cpp" src="" alt="Language Logo">
+							</div>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										C++
+									</div>
+									<div class="flip-card-back">
+										<img src="images/cpp-logo.png" alt="C++ Logo">
+									</div>
 								</div>
-							</li>
-							<li class="language-item" data-logo="python-logo.png">
-								Python
-								<div class="logo-preview">
-									<img id="logo-display-python" src="" alt="Language Logo">
+							</div>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										Python
+									</div>
+									<div class="flip-card-back">
+										<img src="images/python-logo.png" alt="Python Logo">
+									</div>
 								</div>
-							</li>
-						</ul>
-
+							</div>
+						</div>
 
 					</div>
 
