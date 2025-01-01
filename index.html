@@ -211,9 +211,9 @@
 
 		/* Back Side Styles */
 		.flip-card-back {
-			
+
 			transform: rotateY(180deg);
-			
+
 		}
 
 		.flip-card-back img {
@@ -224,29 +224,26 @@
 
 
 
-
-
 		.about-flip-container {
 			position: relative;
 			display: inline-block;
 			perspective: 1000px;
-			/* Enables the 3D effect */
+			/* Enables 3D effect */
 			width: fit-content;
 			cursor: pointer;
 			min-height: 60px;
-		}
-
-		.about-flip-container h2 {
-			margin: 0;
+			/* Adjust to fit text size */
 		}
 
 		.about-flip-front,
 		.about-flip-back {
 			position: absolute;
 			backface-visibility: hidden;
-			/* Hides the back side of the element */
+			/* Hides the back side during rotation */
 			transition: transform 0.6s ease-in-out;
-			transform-style: preserve-3d;
+			/* Smooth rotation effect */
+			width: 100%;
+			height: 100%;
 		}
 
 		.about-flip-front {
@@ -255,17 +252,22 @@
 
 		.about-flip-back {
 			transform: rotateY(180deg);
-			opacity: 0;
+			font-family: 'Courier New', monospace;
+			/* Different font for the back */
+			font-size: 1.5rem;
+			color: #724b58;
+			border:#ccc;
+			
 		}
 
-		.about-flip-container:hover .about-flip-front {
-			transform: rotateY(180deg);
-			opacity: 0;
+		.about-flip-container.flipped .about-flip-front {
+			transform: rotateY(-180deg);
+			/* Rotate to hide the front */
 		}
 
-		.about-flip-container:hover .about-flip-back {
+		.about-flip-container.flipped .about-flip-back {
 			transform: rotateY(0);
-			opacity: 1;
+			/* Rotate to show the back */
 		}
 	</style>
 
@@ -304,6 +306,12 @@
 			trail.style.transform = trail.style.transform.replace(' scale(1.2)', '');
 		});
 
+
+		function flipCard(container) {
+			if (!container.classList.contains("flipped")) {
+				container.classList.add("flipped");
+			}
+		}
 
 
 
@@ -436,10 +444,11 @@
 				<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
 					<div class="row justify-content-start pb-3">
 						<div class="col-md-12 heading-section ftco-animate">
-							<div class="about-flip-container">
-								<h2 class="mb-4 about-flip-front">Who?</h2>
-								<h2 class="mb-4 about-flip-back">Ankita</h2>
+							<div class="about-flip-container" onmouseover="flipCard(this)">
+								<h2 class="about-flip-front">Who?</h2>
+								<h2 class="about-flip-back">Ankita</h2>
 							</div>
+
 							<p>As a Software Engineering student, I have gained practical experience in ReactJS, ExpressJS, and MySQL,
 								which has sparked my interest in Full Stack Development. Currently, I am actively involved in a project
 								focused on refining my skills in Java, Spring Boot, and Bootstrap. My background in customer service has
