@@ -225,49 +225,79 @@
 
 
 		.about-flip-container {
+
+			padding-top: 50px;
 			position: relative;
-			display: inline-block;
-			perspective: 1000px;
-			/* Enables 3D effect */
-			width: fit-content;
+			width: 100%;
+			min-height: 150px;
+			/* Ensure enough height for the flip animation */
+			overflow: hidden;
 			cursor: pointer;
-			min-height: 60px;
-			/* Adjust to fit text size */
+			/* Indicate it's interactive */
+		}
+
+		.flip-inner {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			/* Fill the container's height */
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			perspective: 1000px;
+			/* Apply perspective for the flip effect */
+			transition: transform 0.6s;
+			/* Smooth flip transition */
 		}
 
 		.about-flip-front,
 		.about-flip-back {
 			position: absolute;
 			backface-visibility: hidden;
-			/* Hides the back side during rotation */
-			transition: transform 0.6s ease-in-out;
-			/* Smooth rotation effect */
 			width: 100%;
-			height: 100%;
+			text-align: center;
+			transition: transform 0.6s;
+			/* Smooth transition for flip effect */
+			padding: 20px;
+			/* Ensure there is padding for text content */
 		}
 
 		.about-flip-front {
-			transform: rotateY(0);
+			z-index: 2;
 		}
 
 		.about-flip-back {
 			transform: rotateY(180deg);
-			font-family: 'Courier New', monospace;
-			/* Different font for the back */
-			font-size: 1.5rem;
 			color: #724b58;
-			border:#ccc;
-			
+			font-family: 'Courier New', Courier, monospace;
+			z-index: 1;
 		}
 
-		.about-flip-container.flipped .about-flip-front {
-			transform: rotateY(-180deg);
-			/* Rotate to hide the front */
+		.about-flip-container:hover .about-flip-front {
+			transform: rotateY(180deg);
+			/* Flip front */
 		}
 
-		.about-flip-container.flipped .about-flip-back {
+		.about-flip-container:hover .about-flip-back {
 			transform: rotateY(0);
-			/* Rotate to show the back */
+			/* Show back */
+		}
+
+		p {
+			margin-top: 1.5rem;
+			/* Ensure spacing between the flipped elements and paragraph */
+			font-size: 1.125rem;
+			/* Adjust font size if needed */
+			color: #333;
+			/* Adjust text color if needed */
+			transition: color 0.3s ease;
+			/* Optional transition for color effect */
+		}
+
+		/* Optional: Add hover effect to <p> to indicate the area is interactive */
+		.about-flip-container:hover p {
+			color: #555;
+			/* Change the color on hover */
 		}
 	</style>
 
@@ -444,17 +474,28 @@
 				<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
 					<div class="row justify-content-start pb-3">
 						<div class="col-md-12 heading-section ftco-animate">
+							<!-- Wrapper for the flip effect on Who? and Ankita -->
 							<div class="about-flip-container" onmouseover="flipCard(this)">
-								<h2 class="about-flip-front">Who?</h2>
-								<h2 class="about-flip-back">Ankita</h2>
+								<!-- Flip Effect Container -->
+								<div class="flip-inner">
+									<h2 class="about-flip-front">Who?</h2>
+									<h2 class="about-flip-back">Ankita</h2>
+								</div>
+
+								<!-- Paragraph content will be visible after hover and flipping effect applied -->
+								<p>As a Software Engineering student, I have gained practical experience in ReactJS, ExpressJS, and
+									MySQL,
+									which has sparked my interest in Full Stack Development. Currently, I am actively involved in a
+									project
+									focused on refining my skills in Java, Spring Boot, and Bootstrap. My background in customer service
+									has
+									helped me develop strong communication and teamwork skills, along with the ability to effectively
+									tackle
+									coding challenges.
+								</p>
 							</div>
 
-							<p>As a Software Engineering student, I have gained practical experience in ReactJS, ExpressJS, and MySQL,
-								which has sparked my interest in Full Stack Development. Currently, I am actively involved in a project
-								focused on refining my skills in Java, Spring Boot, and Bootstrap. My background in customer service has
-								helped me develop strong communication and teamwork skills, along with the ability to effectively tackle
-								coding challenges.
-							</p>
+							<!-- List of other information -->
 							<ul class="about-info mt-6 px-md-0 px-2">
 								<li class="d-flex"><span>Education:</span> <span>Bachelor of Software Engineering</span></li>
 								<li class="d-flex"><span>Language:</span> <span>Bengali, English</span></li>
@@ -466,6 +507,8 @@
 						</div>
 					</div>
 				</div>
+
+
 
 			</div>
 		</div>
