@@ -127,6 +127,7 @@
 			/* overflow: hidden;  */
 		}
 
+	
 		/* Main cursor */
 		.custom-cursor {
 			width: 20px;
@@ -154,8 +155,13 @@
 		}
 
 
-
-
+	
+		.btn {
+			position: relative;
+			/* Ensure it is positioned above other elements */
+			z-index: 10;
+			/* Set a higher z-index */
+		}
 
 		/* Flip Card Container for Alignment */
 		.flip-card-container {
@@ -303,6 +309,17 @@
 			/* Change the color on hover */
 		}
 
+
+
+		.chatbot-container {
+			flex: 1;
+			/* Ensure it only takes up its allocated space */
+			position: relative;
+			/* Prevent it from overlapping */
+			z-index: 1;
+			/* Ensure it doesn't cover the left side */
+		}
+
 		/* Chatbot Button Container */
 		.chatbot-btn {
 			text-decoration: none;
@@ -381,25 +398,31 @@
 			}
 		}
 
-		/* Small Screen (Mobile) */
+		/* Chatbot Button for Small Screens */
 		@media (max-width: 767px) {
 			.chatbot-btn {
-				width: 100%;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				justify-content: center;
-				align-items: center;
+				width: auto;
+				/* Ensure it doesn't take full width */
+				height: auto;
+				/* Remove full height */
+				right: 10px;
+				/* Adjust position to avoid overlap */
+				bottom: 10px;
+				/* Keep it at the bottom-right */
+				z-index: 1000;
+				/* Ensure it stays above other elements */
 			}
 
 			.chatbot-icon {
-				width: 120px;
-				height: 120px;
+				width: 80px;
+				/* Reduce size for small screens */
+				height: 80px;
 			}
 
 			.chatbot-icon img {
-				width: 80px;
-				height: 80px;
+				width: 60px;
+				/* Adjust image size */
+				height: 60px;
 			}
 		}
 	</style>
@@ -481,8 +504,7 @@
 				<div class="container">
 					<div class="row d-md-flex no-gutters slider-text align-items-end justify-content-center"
 						data-scrollax-parent="true">
-
-						<div class="one-forth d-flex  align-items-center ftco-animate"
+						<div class="col-md-6 d-flex  align-items-center ftco-animate"
 							data-scrollax=" properties: { translateY: '50%' }">
 							<div class="text">
 								<span class="subheading">Hola!</span>
@@ -541,9 +563,8 @@
 							</div>
 						</div>
 
-
 						<!-- Right Side: Chatbot Button -->
-						<div class="one-forth d-flex  align-items-right ftco-animate chatbot-container">
+						<div class="col-md-6 d-flex  align-items-right ftco-animate chatbot-container">
 							<a href="https://ankita001812.github.io/Chatbot-for-portfolio/" class="chatbot-btn" target="_blank">
 								<div class="chatbot-icon">
 									<img src="images/chat-icon.png" alt="Chatbot">
@@ -557,13 +578,15 @@
 
 					</div>
 
+
+
+
 				</div>
 			</div>
 		</div>
 
 
 	</section>
-
 
 
 	<section class="ftco-about img ftco-section ftco-no-pb fade-in" id="about-section">
