@@ -302,6 +302,78 @@
 			color: #5f6774;
 			/* Change the color on hover */
 		}
+
+		.row {
+			height: 100%;
+			display: flex;
+		}
+
+		.slider-text {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			/* Ensures left and right sides are spaced evenly */
+			width: 100%;
+		}
+
+
+		/* Floating Button */
+		.chatbot-btn {
+			position: fixed;
+			bottom: 50px;
+			right: 50px;
+			text-decoration: none;
+			transition: all 0.3s ease-in-out;
+		}
+
+		/* Button Container */
+		.chatbot-icon {
+			width: 70px;
+			height: 70px;
+			background-color: transparent;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			/* box-shadow: 0 0 15px rgba(0, 123, 255, 0.5); */
+			transition: all 0.3s ease-in-out;
+			position: relative;
+			overflow: hidden;
+			animation: pulse 1.5s infinite;
+		}
+
+		/* Chat Icon */
+		.chatbot-icon img {
+			width: 40px;
+			height: 40px;
+			transition: transform 0.3s ease-in-out;
+		}
+
+		/* Hover Effect */
+		.chatbot-btn:hover .chatbot-icon {
+			transform: scale(1.1);
+			background-color: transparent;
+			/* box-shadow: 0 0 20px rgba(0, 86, 179, 0.8); */
+		}
+
+		.chatbot-btn:hover img {
+			transform: rotate(360deg);
+		}
+
+		/* Pulsing Animation */
+		@keyframes pulse {
+			0% {
+				box-shadow: 0 0 10px #724b58;
+			}
+
+			50% {
+				box-shadow: 0 0 20px #724b58;
+			}
+
+			100% {
+				box-shadow: 0 0 10px #724b58;
+			}
+		}
 	</style>
 
 
@@ -440,10 +512,25 @@
 
 							</div>
 						</div>
+
+
+
+						<!-- Right Side: Chatbot Button -->
+						<div class="col-md-6 d-flex align-items-center justify-content-center chatbot-container">
+							<a href="https://ankita001812.github.io/Chatbot-for-portfolio/" class="chatbot-btn" target="_blank">
+								<div class="chatbot-icon">
+									<img src="/images/chat-icon.png" alt="Chatbot">
+								</div>
+								<div class="chatbot-text">Know me through my Chatbot 😊</div>
+							</a>
+						</div>
+
 					</div>
 				</div>
 			</div>
 		</div>
+
+
 	</section>
 
 
@@ -466,7 +553,8 @@
 										<h2 style="font-family: cursive;"><b><i><span>Ankita Nag Ayshi</span></b></i></h2>
 
 										<ul class="about-info mt-6 px-md-0 px-2">
-											<li class="d-flex"><span class="title-s">Degree: </span> <span>Bachelor of Software Engineering</span></li>
+											<li class="d-flex"><span class="title-s">Degree: </span> <span>Bachelor of Software
+													Engineering</span></li>
 											<li class="d-flex"><span>Institution : </span><b> RMIT University </b></li>
 											<li class="d-flex"><span>Start of Degree:</span> <span>February 2023</span></li>
 											<li class="d-flex"><span>Language:</span> <span>Bengali, English</span></li>
@@ -515,7 +603,8 @@
 									Event Group. This experience has greatly improved my communication skills, which are highly valued in
 									today’s job market.
 
-									<b style="font-family: monospace; color: #724b58;"> 💻 I am looking for opportunities to learn, innovate, and challenge myself </b>🚀
+									<b style="font-family: monospace; color: #724b58;"> 💻 I am looking for opportunities to learn,
+										innovate, and challenge myself </b>🚀
 								</p>
 
 							</div>
