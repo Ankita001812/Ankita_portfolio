@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ankita Nag Ayshi — Resume</title>
+<style>
+  :root {
+    --navy: #1F2A44;
+    --grey: #4D4D4D;
+    --line: #CCCCCC;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    color: #1a1a1a;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 40px 48px 60px;
+    line-height: 1.35;
+    font-size: 14px;
+  }
+  h1 {
+    font-size: 28px;
+    color: var(--navy);
+    margin: 0 0 2px;
+    letter-spacing: 0.5px;
+  }
+  .tagline {
+    font-size: 16px;
+    color: var(--grey);
+    margin: 0 0 8px;
+  }
+  .contact {
+    font-size: 12.5px;
+    margin: 0 0 14px;
+  }
+  .contact a { color: var(--navy); text-decoration: none; border-bottom: 1px solid var(--navy); }
+  hr.top { border: none; border-top: 2px solid var(--navy); margin: 0 0 14px; }
+  h2 {
+    font-size: 14px;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 3px;
+    margin: 18px 0 8px;
+  }
+  .summary { margin: 0 0 4px; }
+  ul.skills { list-style: none; padding: 0; margin: 0; }
+  ul.skills li { margin-bottom: 4px; }
+  ul.skills li b { color: #111; }
+  .entry-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 10px;
+  }
+  .entry-title { font-weight: bold; font-size: 14.5px; }
+  .entry-dates { font-style: italic; color: var(--grey); font-size: 13px; white-space: nowrap; margin-left: 12px; }
+  .entry-sub { font-style: italic; color: var(--grey); font-size: 13px; margin: 1px 0 4px; }
+  ul.bullets { margin: 2px 0 4px; padding-left: 20px; }
+  ul.bullets li { margin-bottom: 3px; }
+  .additional { margin-top: 10px; font-size: 13.5px; }
+  .other-line { font-size: 12.5px; color: var(--grey); margin-top: 4px; }
+  @media print {
+    body { padding: 20px 30px; }
+    a { color: inherit !important; }
+  }
+</style>
+</head>
+<body>
+
+  <h1>ANKITA NAG AYSHI</h1>
+  <p class="tagline">Software Engineer | Cloud &amp; Automation</p>
+  <p class="contact">
+    Melbourne, VIC &nbsp;&middot;&nbsp; +61 414 305 146 &nbsp;&middot;&nbsp; ankinag18@gmail.com &nbsp;&middot;&nbsp;
+    <a href="https://ankita001812.github.io/Ankita_portfolio/" target="_blank">Portfolio</a> &nbsp;&middot;&nbsp;
+    <a href="https://github.com/Ankita001812" target="_blank">GitHub</a> &nbsp;&middot;&nbsp;
+    <a href="https://www.linkedin.com/in/ankita-nag-ayshi/" target="_blank">LinkedIn</a>
+  </p>
+  <hr class="top">
+
+  <h2>Summary</h2>
+  <p class="summary">Final-year Software Engineering student (RMIT University) with hands-on experience automating enterprise software deployment for ~6,000 managed devices, and building AWS infrastructure pipelines using Terraform, Packer, Ansible and OIDC-based authentication. Comfortable working across scripting, cloud automation and full-stack development.</p>
+
+  <h2>Professional Experience</h2>
+
+  <div class="entry-row">
+    <span class="entry-title">Digital Research End User Technology Integration Intern &ndash; RMIT ITS</span>
+    <span class="entry-dates">Jul 2025 &ndash; Jun 2026</span>
+  </div>
+  <p class="entry-sub">RMIT ITS &middot; Melbourne, VIC</p>
+  <ul class="bullets">
+    <li>Automated software deployment and test-suite generation using Python and Robot Framework via Microsoft Intune across ~6,000 researcher-managed devices, executing 12 deployment cycles and reducing manual deployment effort by ~70%.</li>
+    <li>Built Python scripts to auto-generate deployment scripts and testing pipelines, reducing repetitive manual tasks.</li>
+    <li>Automated Jira ticket creation and Confluence page generation from Excel data using APIs, streamlining cross-team workflows.</li>
+    <li>Worked within enterprise security and software-licensing requirements when deploying software across a large institutional device fleet.</li>
+  </ul>
+
+  <div class="entry-row">
+    <span class="entry-title">RACE Image Factory (Capstone Project) &ndash; RMIT ITS</span>
+    <span class="entry-dates">Jul 2026 &ndash; Nov 2026</span>
+  </div>
+  <p class="entry-sub">Automated AWS AMI build pipeline &middot; Melbourne, VIC</p>
+  <ul class="bullets">
+    <li>Designed and built an automated AWS AMI pipeline using Packer and Ansible, orchestrated through GitHub Actions with OIDC-based authentication in place of long-lived AWS credentials.</li>
+    <li>Migrated a legacy EC2 Image Builder process to a modern, automated build pipeline.</li>
+    <li>Implemented automation logic to detect configuration changes, trigger image rebuilds, and record build history in DynamoDB.</li>
+    <li>Wrote Terraform to provision the pipeline's supporting infrastructure.</li>
+  </ul>
+
+  <h2>Technical Skills</h2>
+  <ul class="skills">
+    <li><b>Cloud &amp; Infrastructure:</b> AWS (IAM, SSM, DynamoDB), Terraform, Packer, Ansible, Docker</li>
+    <li><b>CI/CD &amp; Automation:</b> GitHub Actions, OIDC federation, Python automation, PowerShell, Robot Framework</li>
+    <li><b>Languages:</b> Python, Java, JavaScript, SQL</li>
+    <li><b>Web Frameworks:</b> Spring Boot, React.js, Express.js</li>
+    <li><b>Other:</b> Git, Linux/Bash, Scikit-learn (exposure)</li>
+  </ul>
+
+  <h2>Projects</h2>
+
+  <div class="entry-row">
+    <span class="entry-title">BrowseStyle &ndash; ML Fashion Recommendation Web App</span>
+    <span class="entry-dates">Python, Flask, Scikit-learn</span>
+  </div>
+  <ul class="bullets">
+    <li>Built a web application that uses a machine learning model to analyse reviews and generate product recommendations.</li>
+  </ul>
+
+  <div class="entry-row">
+    <span class="entry-title">AirBnB Clone &ndash; Full-Stack Property Booking Platform</span>
+    <span class="entry-dates">React.js, Node.js, Express.js, MongoDB</span>
+  </div>
+  <ul class="bullets">
+    <li>Built a full-stack property booking platform with end-to-end database integration.</li>
+  </ul>
+
+  <div class="entry-row">
+    <span class="entry-title">Peace &ndash; Full-Stack Entertainment Web App</span>
+    <span class="entry-dates">Java, Spring Boot, Thymeleaf, MySQL</span>
+  </div>
+  <ul class="bullets">
+    <li>Developed an entertainment platform with backend services, database connectivity and dynamic pages.</li>
+  </ul>
+
+  <div class="entry-row">
+    <span class="entry-title">Greenie &ndash; E-Commerce Website</span>
+    <span class="entry-dates">React.js, Express.js, MySQL, Bootstrap</span>
+  </div>
+  <ul class="bullets">
+    <li>Built a responsive e-commerce site with functional features and a modern UI.</li>
+  </ul>
+
+  <p class="additional"><b>Additional:</b> Algorithms Through Maze (Java, maze generation/solving algorithms); Portfolio Chatbot (HTML/CSS/JS, keyword-based Q&amp;A about my background) &ndash; see GitHub for both.</p>
+
+  <h2>Education</h2>
+  <div class="entry-row">
+    <span class="entry-title">Bachelor of Software Engineering, RMIT University</span>
+    <span class="entry-dates">2023 &ndash; 2026</span>
+  </div>
+  <p class="other-line"><b>Other:</b> Casual Event Staff &ndash; Spark Event Group (2023&ndash;present); Australian Open (2025)</p>
+
+</body>
+</html>
