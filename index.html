@@ -448,6 +448,23 @@
 			background: #724b58;
 			transform: scale(1.05);
 		}
+
+		/* video box (only used if you add a demo video to the capstone card) */
+		.video-wrap {
+			position: relative;
+			width: 100%;
+			padding-top: 56.25%;
+		}
+
+		.video-wrap iframe,
+		.video-wrap video {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border: 0;
+		}
 	</style>
 
 
@@ -554,6 +571,8 @@
 									// Create an array of typing text
 									const typingTexts = [
 										'Learning through errors! ',
+										'A Cloud & DevOps Enthusiast    ',
+										'An AI / ML Learner    ',
 										'A Techsavvy    ',
 										'A Programmer   ',
 										'A Student   ',
@@ -635,6 +654,7 @@
 											<li class="d-flex"><span>Institution : </span><b> RMIT University </b></li>
 											<li class="d-flex"><span>Start of Degree:</span> <span>February 2023</span></li>
 											<li class="d-flex"><span>Language:</span> <span>Bengali, English</span></li>
+											<li class="d-flex"><span>Career Focus:</span> <span>Cloud / DevOps, AI / ML Engineering</span></li>
 											<li class="d-flex"><span>Other Skills:</span> <span>Microsoft Office, Problem-solving,
 													Communication,
 													Customer Service, Coordination</span></li>
@@ -661,27 +681,31 @@
 								</div>
 
 								<!-- Paragraph content will be visible after hover and flipping effect applied -->
-								<p>I am an international student in Australia, currently in my forth year of Bachelor of Software
-									Engineering degree at RMIT. My university has been a great help in building both my theoretical and
-									practical skills. I've gained valuable hands-on experience through various projects and full-time internship opportunity,
-									which are essential for any job. For example, I learned <b
-										style="font-family: monospace; color: #724b58;"> ReactJS, ExpressJS, and MySQL </b>, while creating
-									a functional website.
+								<p>I am an international student in Australia and a final-year Bachelor of Software Engineering student at RMIT
+									University. I enjoy building things that work from start to finish, and I am aiming for a career in
+									<b style="font-family: monospace; color: #724b58;">cloud / DevOps and AI / ML engineering</b>.
 
-									In my previous semesters, I took a course called Software Engineering Process and Tools where I was
-									allocated in a group of six. We used <b style="font-family: monospace; color: #724b58;">Spring-Boot,
-										Java </b> to build an application from scratch which involved gathering <b
-										style="font-family: monospace; color: #724b58;">requirements, creating sprints, </b> and completing
-									tasks for each sprint to deliver a fully functional website. That project taught me the importance of
-									completing tasks on time and dealing with challenges such as miscommunication within the team, and the
-									need to adapt quickly to unexpected changes.
+									I have worked full-time as an intern in RMIT IT Services' Digital Research team, where I automate
+									deployments and testing with <b style="font-family: monospace; color: #724b58;">PowerShell, Python,
+										Ansible and Robot Framework</b>. For my capstone, I built the <b
+										style="font-family: monospace; color: #724b58;">RACE Image Factory</b>, an automated pipeline that
+									creates AWS machine images using <b style="font-family: monospace; color: #724b58;">Packer, Ansible,
+										Terraform and GitHub Actions</b>.
 
-									Outside academics, I’ve participated in team-based work through my role as a casual employee at Spark
-									Event Group. This experience has greatly improved my communication skills, which are highly valued in
-									today’s job market.
+									Alongside this, I build my own projects, such as full-stack apps with <b
+										style="font-family: monospace; color: #724b58;">ReactJS, ExpressJS and MySQL</b> and AI apps with
+									<b style="font-family: monospace; color: #724b58;">FastAPI and Docker</b>.
 
-									<b style="font-family: monospace; color: #724b58;"> 💻 I am looking for opportunities to learn,
-										innovate, and challenge myself </b>🚀
+									In my course Software Engineering Process and Tools, I worked in a team of six using <b
+										style="font-family: monospace; color: #724b58;">Spring Boot and Java</b> to build an application from
+									scratch. We gathered requirements, planned sprints and delivered the work of each sprint. This taught me to
+									finish tasks on time, communicate clearly, and adapt quickly when plans change.
+
+									Outside university, I work as a casual employee at Spark Event Group, which has strengthened my
+									communication and teamwork skills.
+
+									<b style="font-family: monospace; color: #724b58;"> 💻 I am looking for graduate opportunities where I
+										can learn, build and take on new challenges </b>🚀
 								</p>
 
 							</div>
@@ -734,7 +758,7 @@
 							team, I am responsible for automating various IT processes to enhance efficiency and reduce manual
 							workload. My key tasks include developing PowerShell for
 							deployment automation. Additionally, I employ RobotFramework for test automation to ensure the reliability
-							of our systems. My role involves integrating different technologies with existing IT infrastructure,
+							of our systems. I have also built Python tools that generate deployment and test pipelines, create Jira stories from Excel backlogs, and automate Jira and Confluence through their APIs, which has saved the team a lot of manual effort. My role involves integrating different technologies with existing IT infrastructure,
 							collaborating
 							with cross-functional teams to identify automation opportunities, and documenting processes for future
 							reference.</p>
@@ -758,6 +782,68 @@
 					</div>
 				</div>
 
+				<!-- NEW: Capstone (industry experience) -->
+				<br>
+				<div class="experience-card">
+					<div class="exp-header">
+						<h2>
+							<center><b>RACE Image Factory [Capstone]</b></center>
+						</h2>
+						<h4>
+							<center><b>RMIT University IT Services</b></center>
+						</h4>
+					</div>
+					<span class="exp-date">
+						<center>July - Nov 2026</center>
+					</span>
+					<span class="exp-location">
+						<center>Melbourne, Australia</center>
+					</span>
+					<br>
+					<span class="exp-description">
+
+						<p class="mt-5" style="color: #5f6774;">For my capstone, I built the <b> RACE Image Factory </b>for RMIT
+							IT Services: an automated pipeline that creates secure, ready-to-use AWS machine images (AMIs) for
+							researchers. A GitHub Actions workflow signs in to AWS using OIDC (no stored passwords), then Packer and
+							Ansible build the RHEL image. I added hash-based change detection: the pipeline creates a hash of the
+							Packer and Ansible files, detects when something has changed, and automatically rebuilds the image.
+							I wrote the infrastructure in Terraform (IAM, S3, KMS, CloudWatch,
+							DynamoDB) following the team's tagging standards, and saved build history in DynamoDB. I also moved
+							legacy EC2 Image Builder steps into Ansible, and designed a React + TypeScript web page so non-technical
+							users can start a build without using GitHub. I worked in sprints with the ITS team and fixed real
+							pipeline issues such as access errors and build timeouts.</p>
+					</span>
+					<br>
+
+					<div class="tech-stack">
+						<span>AWS</span>
+						<span>Packer</span>
+						<span>Ansible</span>
+						<span>Terraform</span>
+						<span>GitHub Actions</span>
+						<span>OIDC</span>
+						<span>DynamoDB</span>
+						<span>IAM</span>
+						<span>Auto Rebuild</span>
+						<span>React</span>
+						<span>TypeScript</span>
+						<span>Agile / Sprints</span>
+					</div>
+
+					<!-- Optional demo video. Uncomment ONE option (YouTube or your own file).
+					<div class="video-wrap mt-4">
+						<iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="RACE Image Factory demo"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture"
+							allowfullscreen></iframe>
+					</div>
+					<div class="video-wrap mt-4">
+						<video controls preload="metadata">
+							<source src="videos/race-demo.mp4" type="video/mp4">
+						</video>
+					</div>
+					-->
+				</div>
+
 			</div>
 		</div>
 	</section>
@@ -770,7 +856,7 @@
 			<div class="row justify-content-center pb-5">
 				<div class="col-md-10 heading-section text-center ftco-animate">
 					<h2 class="mb-4">Skills</h2>
-					<p>Throughout the first two years of my degree, I have gained valuable experiences and developed a range of
+					<p>Throughout my degree and internship, I have gained valuable experience and developed a range of
 						skills in different areas, which are essential for my tech journey.</p>
 				</div>
 			</div>
@@ -858,6 +944,27 @@
 									</div>
 								</div>
 							</div>
+							<!-- NEW -->
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										TypeScript
+									</div>
+									<div class="flip-card-back">
+										<img src="images/typescript.png" alt="TypeScript Logo">
+									</div>
+								</div>
+							</div>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										PowerShell
+									</div>
+									<div class="flip-card-back">
+										<img src="images/powershell.png" alt="PowerShell Logo">
+									</div>
+								</div>
+							</div>
 
 
 						</div>
@@ -925,6 +1032,17 @@
 									</div>
 								</div>
 							</div>
+							<!-- NEW -->
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										FastAPI
+									</div>
+									<div class="flip-card-back">
+										<img src="images/fastapi.png" alt="FastAPI Logo">
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -956,6 +1074,17 @@
 									</div>
 								</div>
 							</div>
+							<!-- NEW -->
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										DynamoDB
+									</div>
+									<div class="flip-card-back">
+										<img src="images/dynamodb.png" alt="DynamoDB Logo">
+									</div>
+								</div>
+							</div>
 
 						</div>
 					</div>
@@ -965,6 +1094,69 @@
 
 
 			</div>
+
+			<!-- NEW: Cloud & DevOps -->
+			<div class="row justify-content-center">
+				<div class="col-md-10">
+					<div class="resume-wrap ftco-animate">
+						<span class="date">Cloud &amp; DevOps</span>
+						<p class="mt-4">Cloud and automation tools I have used:</p>
+						<div class="flip-card-container">
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										AWS
+									</div>
+									<div class="flip-card-back">
+										<img src="images/aws.png" alt="AWS Logo">
+									</div>
+								</div>
+							</div>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										Terraform
+									</div>
+									<div class="flip-card-back">
+										<img src="images/terraform.png" alt="Terraform Logo">
+									</div>
+								</div>
+							</div>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										Packer
+									</div>
+									<div class="flip-card-back">
+										<img src="images/packer.png" alt="Packer Logo">
+									</div>
+								</div>
+							</div>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										Ansible
+									</div>
+									<div class="flip-card-back">
+										<img src="images/ansible.png" alt="Ansible Logo">
+									</div>
+								</div>
+							</div>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										GitHub Actions
+									</div>
+									<div class="flip-card-back">
+										<img src="images/gh-actions.png" alt="GitHub Actions Logo">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
 			<div class="row justify-content-center">
 				<div class="col-md-10">
 					<div class="resume-wrap ftco-animate">
@@ -1156,8 +1348,7 @@
 				<div class="col-md-7 heading-section text-center ftco-animate">
 					<h2 class="mb-4">Projects</h2>
 					<div class="underline"></div>
-					<p style="color: rgb(128, 142, 155);"> Some projects I've worked on over the past two years during my academic
-						career are given below </p>
+					<p style="color: rgb(128, 142, 155);"> Some projects I've worked on throughout my degree and internship are given below </p>
 					<br>
 					<p><a href="https://github.com/users/Ankita001812/achievements/quickdraw"
 							class="btn btn-primary py-3 px-5">GitHub</a></p>
