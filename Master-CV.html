@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ankita Nag Ayshi — CV Pack</title>
+<style>
+  :root { --bg:#14171f; --panel:#1d222d; --line:#2e3545; --text:#e6e9f0; --muted:#9aa3b5; --accent:#6ea8fe; --ink:#111; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.45; }
+  .chrome { position:sticky; top:0; z-index:5; background:var(--panel); border-bottom:1px solid var(--line); padding:10px 16px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+  .chrome button { background:transparent; color:var(--text); border:1px solid var(--line); border-radius:6px; padding:7px 12px; font-size:13px; cursor:pointer; }
+  .chrome button.on { background:var(--accent); color:#0b1220; border-color:var(--accent); font-weight:700; }
+  .chrome .sp { flex:1; }
+  .hint { color:var(--muted); font-size:12px; padding:10px 16px 0; text-align:center; }
+
+  /* CV sheet */
+  .sheet { background:#fff; color:var(--ink); max-width:820px; margin:16px auto 40px; padding:34px 40px 30px; font-size:13px; }
+  .sheet h1 { font-size:28px; text-align:center; margin:0 0 2px; color:#1F2A44; letter-spacing:.5px; }
+  .head { text-align:center; font-weight:700; font-size:15px; margin:0 0 4px; }
+  .contact { text-align:center; font-size:11.5px; margin:0 0 6px; }
+  .contact a { color:#1F2A44; }
+  .sheet h2 { font-size:13.5px; text-transform:uppercase; margin:16px 0 8px; padding-bottom:4px; border-bottom:5px solid #000; color:#1F2A44; }
+  .sheet p { margin:0 0 4px; }
+  .row { display:flex; justify-content:space-between; gap:12px; margin-top:8px; }
+  .row b { font-size:13.5px; } .row i { color:#444; white-space:nowrap; }
+  .sub { font-style:italic; color:#444; margin:0 0 3px; }
+  .sheet ul { margin:2px 0 4px; padding-left:20px; } .sheet li { margin-bottom:2px; }
+  .proj { margin-top:8px; } .proj a { color:#111; font-weight:700; } .proj span { color:#444; font-style:italic; }
+
+  /* Audit panel */
+  .audit { max-width:900px; margin:16px auto 40px; padding:0 16px; }
+  .audit h2 { font-size:18px; margin:26px 0 10px; color:var(--accent); }
+  .audit table { width:100%; border-collapse:collapse; background:var(--panel); font-size:13px; display:block; overflow-x:auto; }
+  .audit th, .audit td { border:1px solid var(--line); padding:7px 10px; text-align:left; vertical-align:top; }
+  .audit th { background:#262d3b; }
+  .audit .note { color:var(--muted); font-size:13px; }
+  .check label { display:block; padding:8px 12px; background:var(--panel); border:1px solid var(--line); border-radius:6px; margin-bottom:6px; cursor:pointer; }
+  .check input { margin-right:10px; }
+
+  @media (max-width:640px){ .sheet{ padding:20px 16px; margin:0; } .row{ flex-direction:column; gap:0; } }
+  @media print {
+    body { background:#fff; } .chrome,.hint,.audit { display:none !important; }
+    .sheet { margin:0; padding:0; max-width:none; } @page { size:A4; margin:12mm; }
+  }
+</style>
+</head>
+<body>
+<div class="chrome" id="tabs"></div>
+<div class="hint" id="hint">Pick a version, then use Print / Save as PDF. Single column, plain text: safe for ATS.</div>
+<div id="cv" class="sheet"></div>
+<div id="audit" class="audit" hidden>
+  <h2>Score (my framework, not a real ATS score)</h2>
+  <table>
+    <tr><th>Category</th><th>Weight</th><th>Old PDF</th><th>Why</th></tr>
+    <tr><td>Parsing and structure</td><td>15</td><td>7</td><td>Two columns, doubled text, scrambled order</td></tr>
+    <tr><td>Keyword coverage</td><td>20</td><td>12</td><td>Git, Linux, Ansible missing from skills</td></tr>
+    <tr><td>Relevant experience</td><td>20</td><td>15</td><td>12-month internship at ~6,000-device scale</td></tr>
+    <tr><td>Achievements and impact</td><td>15</td><td>8</td><td>One metric, no capstone result</td></tr>
+    <tr><td>Title and role alignment</td><td>10</td><td>5</td><td>Mixed tagline</td></tr>
+    <tr><td>Project relevance</td><td>10</td><td>6</td><td>Capstone strong, others thin</td></tr>
+    <tr><td>Readability</td><td>10</td><td>6</td><td>Dense, fragment bullets</td></tr>
+    <tr><td><b>Total</b></td><td><b>100</b></td><td><b>59</b></td><td>New single-column CVs fix parsing and wording. Add a capstone result to gain more.</td></tr>
+  </table>
+
+  <h2>Before and after</h2>
+  <table>
+    <tr><th>Original</th><th>Problem</th><th>Improved</th></tr>
+    <tr><td>Aspiring Software Engineering student</td><td>Sounds unfinished</td><td>Software Engineering graduate (RMIT University)…</td></tr>
+    <tr><td>12 software deployments / Security requirements / Software licensing</td><td>Fragments</td><td>Merged into full sentences</td></tr>
+    <tr><td>Generated scripts to deploy software…</td><td>Vague</td><td>Completed 12 software deployments… using PowerShell deployment scripts</td></tr>
+    <tr><td>Ability to navigate complex organizational systems</td><td>No evidence</td><td>Removed</td></tr>
+    <tr><td>Capstone: Framework: Packer, GitHub Actions</td><td>Tech list only</td><td>Four bullets: design, migration, change detection, Terraform</td></tr>
+    <tr><td>Two columns, doubled text</td><td>ATS misreads</td><td>Single column, plain text</td></tr>
+    <tr><td>WhatsApp (Coming Soon), Maze, Chatbot, Reference line</td><td>Unfinished or filler</td><td>Cut</td></tr>
+  </table>
+
+  <h2>Removed until you confirm evidence</h2>
+  <p class="note">Podman, TensorFlow, PyTorch, Lambda, Pandas, NumPy. Tell me where you used any of them and I will add it back. Add "REST APIs" only if your Jira/Confluence work was REST-based. Add a real capstone result (build time, images, time saved) if you have one.</p>
+
+  <h2>Work rights (general guidance, not migration advice)</h2>
+  <p class="note">Keep visa details off the CV until a 485 or bridging visa is in place. Answer form questions exactly. Mention your plan briefly to recruiters early. Skip roles that need citizenship or PR. Check Home Affairs or a registered migration agent for your own situation.</p>
+
+  <h2>Checklist before applying</h2>
+  <div class="check" id="check"></div>
+</div>
+
+<script>
+const contact = [["Melbourne, VIC"],["+61 414 305 146"],["ankinag18@gmail.com"],
+ ["LinkedIn","https://www.linkedin.com/in/ankita-nag-ayshi/"],
+ ["GitHub","https://github.com/Ankita001812"],
+ ["Portfolio","https://ankita001812.github.io/Ankita_portfolio/"]];
+
+const intern = {
+  title:"Digital Research End User Technology Integration Intern", org:"RMIT Information Technology Services (ITS), Melbourne, VIC", dates:"Jul 2025 – Jun 2026",
+  deploy:"Completed 12 software deployments through the Microsoft Intune Company Portal for ~6,000 researcher-managed laptops, using PowerShell deployment scripts.",
+  gen:"Developed Python automation that generates deployment scripts and testing pipelines, reducing manual deployment effort by ~70%.",
+  test:"Authored automated test suites with Robot Framework and Python to validate software deployments.",
+  api:"Automated Jira ticket creation and Confluence page generation from Excel data using the Jira and Confluence APIs, streamlining cross-team workflows.",
+  sec:"Met enterprise security and software-licensing requirements when deploying across a large institutional device fleet.",
+  stack:"Python, PowerShell, Robot Framework, Jira/Confluence APIs, Microsoft Intune, Git, Bitbucket, Linux/Bash"
+};
+const cap = {
+  title:"Automated AWS Image Factory (Capstone Project)", org:"RACE, RMIT University", dates:"Jul 2026 – Nov 2026",
+  b:["Designed and built an automated AWS AMI build pipeline using Packer and Ansible, orchestrated by GitHub Actions with OIDC authentication in place of long-lived AWS credentials.",
+     "Migrated a legacy EC2 Image Builder process to the automated pipeline.",
+     "Implemented logic to detect configuration changes and trigger image rebuilds when required, recorded build history in DynamoDB, and managed previous AMIs.",
+     "Wrote Terraform to provision the pipeline’s supporting infrastructure."],
+  stack:"Packer, Ansible, Terraform, GitHub Actions, AWS (IAM, SSM, S3, DynamoDB), OIDC"
+};
+const P = {
+  browse:["BrowseStyle – ML Fashion Recommendation Web App","https://github.com/Ankita001812/BrowseStyle/","Python, Flask, Scikit-learn, NLP","Created a Flask web application that uses a machine learning model to analyse product reviews and generate recommendations."],
+  airbnb:["AirBnB – Full-Stack Property Booking Platform","https://github.com/Ankita001812/AirBnB","React.js, Node.js, Express.js, MongoDB","Delivered a full-stack property booking platform with end-to-end database integration."],
+  peace:["Peace – Full-Stack Entertainment Web Application","https://github.com/Ankita001812/Peace","Java, Spring Boot, Thymeleaf, MySQL, Bootstrap","Engineered backend services, database connectivity and dynamic web pages for an entertainment platform."],
+  greenie:["Greenie – E-Commerce Website","https://ankita001812.github.io/Greenie/","React.js, Express.js, MySQL, Bootstrap","Produced a responsive e-commerce website with functional features and a modern UI."]
+};
+const V = {
+ master:{tab:"Master", head:"Graduate Software &amp; Automation Engineer",
+  sum:"Software Engineering graduate (RMIT University) with enterprise internship experience in Python and PowerShell automation, software deployment and automated testing, plus an AWS infrastructure-as-code capstone. Experienced in API integration and CI/CD, with full-stack projects in Java, Python and JavaScript.",
+  skills:[["Languages","Python, PowerShell, Java, JavaScript, SQL, C++"],["Cloud &amp; DevOps","AWS (IAM, SSM, S3, DynamoDB, EC2 Image Builder), Terraform, Packer, Ansible, GitHub Actions (CI/CD), OIDC, Docker"],["Automation &amp; Testing","Robot Framework, Python automation, Jira/Confluence API integration, Microsoft Intune"],["Backend &amp; Web","Spring Boot, Flask, Node.js, Express.js, React.js, MongoDB, MySQL"],["Tools","Git, Bitbucket, Linux/Bash"],["Machine Learning","Scikit-learn"]],
+  exp:["deploy","gen","test","api","sec"], proj:["cap","browse","airbnb","peace","greenie"]},
+ A:{tab:"A · Software Engineer", head:"Graduate Software Engineer",
+  sum:"Software Engineering graduate (RMIT University) with enterprise internship experience building Python automation, API integrations and automated test suites. Full-stack project experience in Java (Spring Boot), Python (Flask), React.js and Node.js, plus an AWS infrastructure automation capstone.",
+  skills:[["Languages","Python, Java, JavaScript, SQL, C++, PowerShell"],["Backend &amp; Web","Spring Boot, Flask, Node.js, Express.js, React.js, MongoDB, MySQL"],["Automation &amp; Testing","Robot Framework, Python automation, Jira/Confluence API integration"],["Cloud &amp; DevOps","AWS (IAM, SSM, S3, DynamoDB), Terraform, Packer, Ansible, GitHub Actions (CI/CD), Docker"],["Tools","Git, Bitbucket, Linux/Bash"],["Machine Learning","Scikit-learn"]],
+  exp:["gen","api","test","deploy","sec"], proj:["browse","peace","airbnb","cap","greenie"]},
+ B:{tab:"B · Backend / Python", head:"Graduate Python &amp; Backend Developer",
+  sum:"Software Engineering graduate (RMIT University) with enterprise internship experience in Python automation and API integration, plus backend project experience with Flask, Node.js/Express.js, Spring Boot, MongoDB and MySQL. Comfortable with automated testing, Git and CI/CD, and with building tools that remove repetitive manual work.",
+  skills:[["Languages","Python, SQL, JavaScript, Java, PowerShell, C++"],["Backend &amp; Databases","Flask, Node.js, Express.js, Spring Boot, MongoDB, MySQL, API integration (Jira, Confluence)"],["Automation &amp; Testing","Python automation, Robot Framework, PowerShell"],["Cloud &amp; DevOps","AWS (IAM, S3, DynamoDB), GitHub Actions (CI/CD), Terraform, Docker"],["Tools","Git, Bitbucket, Linux/Bash"],["Frontend &amp; ML","React.js, Scikit-learn"]],
+  exp:["api","gen","test","deploy","sec"], proj:["browse","airbnb","peace","cap","greenie"]},
+ C:{tab:"C · Cloud / DevOps", head:"Graduate Cloud, DevOps &amp; Automation Engineer",
+  sum:"Software Engineering graduate (RMIT University) with enterprise internship experience automating software deployment and testing, and an AWS capstone that modernised an image-build process with Packer, Ansible, Terraform and GitHub Actions. Strong in Python and PowerShell automation, CI/CD and infrastructure as code.",
+  skills:[["Cloud &amp; DevOps","AWS (IAM, SSM, S3, DynamoDB, EC2 Image Builder), Terraform, Packer, Ansible, Docker"],["CI/CD &amp; Automation","GitHub Actions, OIDC, Python automation, PowerShell, Robot Framework, Microsoft Intune"],["Languages","Python, PowerShell, Bash, Java, JavaScript, SQL, C++"],["Tools","Git, Bitbucket, Linux, Jira/Confluence API integration"],["Web &amp; ML","Spring Boot, Flask, Node.js, Express.js, React.js, MongoDB, MySQL, Scikit-learn"]],
+  exp:["deploy","gen","test","sec","api"], proj:["cap","airbnb","browse","peace"]}
+};
+const checks = ["Pick the version that matches the job title (A, B or C). Use Master if unsure.","Check the ad’s work-rights line. Skip roles that need citizenship or PR.","Match 3 to 5 keywords from the ad to your CV, only where true.","Upload the PDF unless the portal asks for Word.","Give the file a clear name, e.g. Ankita-Nag-Ayshi-CV-C.pdf.","Answer work-rights questions on the form exactly and truthfully.","Check that the LinkedIn and GitHub links open.","Check the headline and dates match your LinkedIn."];
+
+const li = a => a.map(t => "<li>"+t+"</li>").join("");
+const capHtml = () => "<div class='row'><b>"+cap.title+"</b><i>"+cap.dates+"</i></div><p class='sub'>"+cap.org+"</p><ul>"+li(cap.b)+"</ul><p><b>Tech:</b> "+cap.stack+"</p>";
+function render(key){
+  const v = V[key];
+  const c = contact.map(x => x[1] ? '<a href="'+x[1]+'" target="_blank">'+x[0]+'</a>' : x[0]).join("  |  ");
+  let h = "<h1>ANKITA NAG AYSHI</h1><p class='head'>"+v.head+"</p><p class='contact'>"+c+"</p>";
+  h += "<h2>Professional Summary</h2><p>"+v.sum+"</p>";
+  h += "<h2>Professional Experience</h2><div class='row'><b>"+intern.title+"</b><i>"+intern.dates+"</i></div><p class='sub'>"+intern.org+"</p><ul>"+li(v.exp.map(k => intern[k]))+"</ul><p><b>Tech:</b> "+intern.stack+"</p>"+capHtml();
+  h += "<h2>Technical Skills</h2>"+v.skills.map(s => "<p><b>"+s[0]+":</b> "+s[1]+"</p>").join("");
+  h += "<h2>Projects</h2>";
+  h += v.proj.filter(k => k !== "cap").map(k => {
+    const p = P[k];
+    return "<div class='proj'><a href='"+p[1]+"' target='_blank'>"+p[0]+"</a> <span>| "+p[2]+"</span></div><ul>"+li([p[3]])+"</ul>";
+  }).join("");
+  h += "<h2>Education</h2><div class='row'><b>Bachelor of Software Engineering, RMIT University, Melbourne</b><i>2023 – Nov 2026</i></div>";
+  h += "<h2>Additional Experience</h2><div class='row'><b>Casual Event Staff, Spark Event Group</b><i>Jul 2023 – Present</i></div><div class='row'><b>Event Staff, Australian Open</b><i>2025</i></div>";
+  document.getElementById("cv").innerHTML = h;
+}
+
+const tabs = document.getElementById("tabs"); let cur = "master";
+function show(key){
+  cur = key;
+  const isAudit = key === "audit";
+  document.getElementById("cv").hidden = isAudit;
+  document.getElementById("audit").hidden = !isAudit;
+  document.getElementById("hint").hidden = isAudit;
+  if(!isAudit) render(key);
+  [...tabs.querySelectorAll("button[data-k]")].forEach(b => b.classList.toggle("on", b.dataset.k === key));
+}
+Object.keys(V).concat("audit").forEach(k => {
+  const b = document.createElement("button"); b.dataset.k = k;
+  b.textContent = k === "audit" ? "Audit & checklist" : V[k].tab;
+  b.onclick = () => show(k); tabs.appendChild(b);
+});
+tabs.insertAdjacentHTML("beforeend", "<span class='sp'></span>");
+const pb = document.createElement("button"); pb.textContent = "Print / Save as PDF"; pb.onclick = () => { if(cur==="audit") show("master"); window.print(); };
+tabs.appendChild(pb);
+
+// checklist (browser storage is optional)
+const box = document.getElementById("check"); let saved = {};
+try { saved = JSON.parse(localStorage.getItem("cvChecks") || "{}"); } catch(e) {}
+checks.forEach((t,i) => {
+  const l = document.createElement("label"), cb = document.createElement("input");
+  cb.type = "checkbox"; cb.checked = !!saved[i];
+  cb.onchange = () => { saved[i] = cb.checked; try { localStorage.setItem("cvChecks", JSON.stringify(saved)); } catch(e) {} };
+  l.appendChild(cb); l.appendChild(document.createTextNode(t)); box.appendChild(l);
+});
+show("master");
+</script>
+</body>
+</html>
