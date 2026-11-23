@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ankita Nag Ayshi — Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --ink: #111; --muted: #333; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #eee;
+    font-family: "Open Sans", Arial, sans-serif;
+    color: var(--ink);
+    font-size: 12.5px;
+    line-height: 1.4;
+  }
+  .page {
+    max-width: 900px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 34px 36px 30px;
+  }
+
+  /* Header */
+  header { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; }
+  header h1 {
+    font-family: "Montserrat", Arial, sans-serif;
+    font-size: 30px;
+    line-height: 1.1;
+    margin: 0 0 4px;
+    font-weight: 700;
+  }
+  header .tagline { font-family: "Montserrat", Arial, sans-serif; font-weight: 600; font-size: 14px; margin: 0; }
+  .contact { text-align: right; font-size: 11.5px; font-weight: 700; line-height: 1.5; }
+  .contact a { color: var(--ink); }
+
+  /* Two columns */
+  .cols { display: grid; grid-template-columns: 1.08fr 1fr; gap: 26px; margin-top: 18px; }
+
+  h2 {
+    font-family: "Montserrat", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 7px solid #000;
+  }
+  section { margin-bottom: 18px; }
+
+  .role {
+    font-family: "Montserrat", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 13.5px;
+    margin: 0 0 6px;
+    line-height: 1.3;
+  }
+  ul { margin: 0 0 6px; padding-left: 20px; }
+  li { margin-bottom: 3px; }
+  .meta p { margin: 0 0 4px; }
+  .about { text-align: justify; margin: 0; }
+
+  .exp-divider { border: none; border-top: 2px solid #000; margin: 14px 0; }
+
+  /* Skills */
+  .skills p { margin: 0 0 3px; }
+
+  /* Projects */
+  .project { margin-bottom: 11px; }
+  .project .name { font-weight: 700; display: block; }
+  .project .stack { font-size: 11.5px; }
+  .project a { color: var(--ink); }
+
+  /* Event staff */
+  .events { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; font-size: 11.5px; }
+  .events b { display: block; margin-bottom: 2px; }
+  .events ul { padding-left: 14px; margin: 0; }
+
+  .edu { font-family: "Montserrat", Arial, sans-serif; font-weight: 700; font-size: 12.5px; }
+  .ref-title { font-weight: 700; margin: 0 0 10px; }
+  .thanks { font-size: 11px; font-weight: 700; text-align: right; margin: 0; }
+  .sign { font-size: 11px; font-weight: 700; text-align: right; margin: 12px 0 0; }
+
+  @media (max-width: 720px) {
+    .page { padding: 22px 18px; margin: 0; }
+    header { flex-direction: column; }
+    .contact { text-align: left; }
+    .cols { grid-template-columns: 1fr; }
+  }
+  @media print {
+    body { background: #fff; }
+    .page { margin: 0; padding: 18px 22px; max-width: none; }
+    @page { size: A4; margin: 8mm; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div>
+      <h1>ANKITA NAG AYSHI</h1>
+      <p class="tagline">Software Engineer - Cloud &amp; Automation</p>
+    </div>
+    <div class="contact">
+      Portfolio: <a href="https://ankita001812.github.io/Ankita_portfolio/" target="_blank">https://ankita001812.github.io/Ankita_portfolio/</a><br>
+      GitHub: <a href="https://github.com/Ankita001812" target="_blank">https://github.com/Ankita001812</a><br>
+      LinkedIn: <a href="https://www.linkedin.com/in/ankita-nag-ayshi/" target="_blank">https://www.linkedin.com/in/ankita-nag-ayshi/</a><br>
+      Phone: +61414305146<br>
+      Email: ankinag18@gmail.com
+    </div>
+  </header>
+
+  <div class="cols">
+
+    <!-- LEFT COLUMN -->
+    <div>
+      <section>
+        <h2>About Me</h2>
+        <p class="about">Software Engineering graduate with hands-on industry experience in software development, automation, testing and cloud technologies. Skilled in developing software solutions, streamlining processes and integrating APIs, with a strong problem-solving mindset and eagerness to learn new technologies.</p>
+      </section>
+
+      <section>
+        <h2>Experience</h2>
+
+        <p class="role">Digital Research End User Technology Integration Intern | RMIT ITS | JULY 2025 - JUNE 2026</p>
+        <ul>
+          <li>Generated scripts to deploy software via the Intune company portal for ~6000 researcher managed laptops, including automated test suite generation using Robot Framework and Python.</li>
+          <li>Automated software deployments, reducing manual effort by ~70%.</li>
+          <li>Built Python scripts to auto-generate deployment scripts and testing pipelines, reducing repetitive manual tasks.</li>
+          <li>Automated Jira ticket creation and Confluence page generation from Excel data using APIs, streamlining cross-team workflows.</li>
+          <li>Worked within enterprise security and software-licensing requirements when deploying software across a large institutional device fleet.</li>
+        </ul>
+        <div class="meta">
+          <p><b>Tech Stack:</b> Python, PowerShell, Linux/Bash, Robot Framework, APIs, Bitbucket, Git</p>
+          <p><b>Process Automation:</b> Excel =&gt; Jira/Confluence workflows, script generators</p>
+        </div>
+
+        <hr class="exp-divider">
+
+        <p class="role">Automated AWS Image Factory (Capstone Project) | RACE RMIT | JULY 2026 - NOV 2026</p>
+        <ul>
+          <li>Designed and built an automated AWS AMI pipeline using Packer and Ansible, orchestrated through GitHub Actions with OIDC-based authentication in place of long-lived AWS credentials.</li>
+          <li>Migrated a legacy EC2 Image Builder process to a modern, automated build pipeline.</li>
+          <li>Implemented automation logic to detect configuration changes, trigger image rebuilds, and record build history in DynamoDB.</li>
+          <li>Wrote Terraform to support the pipeline's infrastructure.</li>
+        </ul>
+        <div class="meta">
+          <p><b>Tech Stack:</b> Packer, Ansible, Terraform, GitHub Actions, AWS, OIDC, SSM, DynamoDB, S3 Bucket</p>
+          <p><b>Process Automation:</b> Manual EC2 Image Builder Pipeline =&gt; Automated Image builder pipeline</p>
+        </div>
+
+        <div class="events">
+          <div>
+            <b>Spark Event Group (2023 – present)</b>
+            Casual Event Staff
+          </div>
+          <div>
+            <b>Australian Open (2025) | Event Staff</b>
+            <ul>
+              <li>Helped people with relevant information</li>
+              <li>Interacting with the public</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div>
+      <section class="skills">
+        <h2>Skills</h2>
+        <p>Cloud &amp; DevOps: <b>AWS (IAM, SSM, DynamoDB, EC2 Image Builder, Lambda), Terraform, Packer, Ansible, Docker</b></p>
+        <p>CI/CD &amp; Automation: <b>GitHub Actions, OIDC, Python automation, PowerShell, Git, Linux/Bash</b></p>
+        <p>Programming Languages: <b>Python, Java, C++, JavaScript, SQL</b></p>
+        <p>Frameworks: <b>Spring Boot, React.js, Express.js, Robot Framework</b></p>
+        <p>Data &amp; ML: <b>Scikit-learn, TensorFlow, PyTorch</b></p>
+      </section>
+
+      <section>
+        <h2>Projects</h2>
+
+        <div class="project">
+          <span class="name"><a href="https://github.com/Ankita001812/BrowseStyle/" target="_blank">BrowseStyle</a></span>
+          <span class="stack">ML Fashion Recommendation Web App | Python, Flask, Scikit-learn, NLP</span>
+        </div>
+
+        <div class="project">
+          <span class="name"><a href="https://github.com/Ankita001812/AirBnB" target="_blank">AirBnB</a></span>
+          <span class="stack">Full-Stack Property Booking Platform | React.js, Node.js, Express.js, MongoDB</span>
+        </div>
+
+        <div class="project">
+          <span class="name"><a href="https://ankita001812.github.io/Greenie/" target="_blank">Greenie</a></span>
+          <span class="stack">E-Commerce Website | React.js, Express.js, MySQL, Bootstrap</span>
+        </div>
+
+        <div class="project">
+          <span class="name"><a href="https://github.com/Ankita001812/Algorithms-through-maze" target="_blank">Algorithms Through Maze</a></span>
+          <span class="stack">Demonstrated the use of different algorithms to generate and solve mazes.</span>
+        </div>
+
+        <div class="project">
+          <span class="name"><a href="https://ankita001812.github.io/Chatbot-for-portfolio/" target="_blank">Portfolio Chatbot</a></span>
+          <span class="stack">A chatbot that provides information about my background using keyword-based queries.</span>
+        </div>
+      </section>
+
+      <section>
+        <h2>Education</h2>
+        <div class="edu">Bachelor of Software Engineering | 2023-2026<br>RMIT University</div>
+      </section>
+
+      <section>
+        <h2>Reference</h2>
+        <p class="ref-title">AVAILABLE UPON REQUEST!</p>
+        <p class="thanks">Thank you for sparing a few minutes to give my resume a look! Means a lot!</p>
+        <p class="sign">Kind Regards<br>ANKITA NAG AYSHI<br>https://ankita001812.github.io/Ankita_portfolio/</p>
+      </section>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
