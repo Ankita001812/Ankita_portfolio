@@ -41,7 +41,19 @@
   @media (max-width:640px){ .sheet{ padding:20px 16px; margin:0; } .row{ flex-direction:column; gap:0; } }
   @media print {
     body { background:#fff; } .chrome,.hint,.audit { display:none !important; }
-    .sheet { margin:0; padding:0; max-width:none; } @page { size:A4; margin:12mm; }
+    .sheet { margin:0; padding:0; max-width:none; } @page { size:A4; margin:8mm; }
+    .row { flex-direction:row !important; gap:12px !important; }
+    .row i { flex-shrink:0; text-align:right; }
+    /* one-page fit */
+    .sheet { font-size:11.3px; line-height:1.28; }
+    .sheet h1 { font-size:22px; margin:0; }
+    .head { font-size:12.5px; margin:0 0 2px; }
+    .contact { font-size:10px; margin:0 0 2px; }
+    .sheet h2 { font-size:11.5px; margin:8px 0 4px; padding-bottom:2px; border-bottom-width:3px; }
+    .row { margin-top:4px; } .row b { font-size:11.5px; }
+    .sheet p { margin-bottom:2px; }
+    .sheet ul { margin:1px 0 2px; padding-left:16px; } .sheet li { margin-bottom:1px; }
+    .proj { margin-top:4px; }
   }
 </style>
 </head>
@@ -66,7 +78,7 @@
   <h2>Before and after</h2>
   <table>
     <tr><th>Original</th><th>Problem</th><th>Improved</th></tr>
-    <tr><td>Aspiring Software Engineering student</td><td>Sounds unfinished</td><td>Software Engineering graduate (RMIT University)…</td></tr>
+    <tr><td>Aspiring Software Engineering student</td><td>Sounds unfinished</td><td>Software Engineering (RMIT University)…</td></tr>
     <tr><td>12 software deployments / Security requirements / Software licensing</td><td>Fragments</td><td>Merged into full sentences</td></tr>
     <tr><td>Generated scripts to deploy software…</td><td>Vague</td><td>Completed 12 software deployments… using PowerShell deployment scripts</td></tr>
     <tr><td>Ability to navigate complex organizational systems</td><td>No evidence</td><td>Removed</td></tr>
@@ -92,7 +104,7 @@ const contact = [["Melbourne, VIC"],["+61 414 305 146"],["ankinag18@gmail.com"],
  ["Portfolio","https://ankita001812.github.io/Ankita_portfolio/"]];
 
 const intern = {
-  title:"Digital Research End User Technology Integration Intern", org:"RMIT Information Technology Services (ITS), Melbourne, VIC", dates:"Jul 2025 – Jun 2026",
+  title:"Digital Research End User Technology Integration Intern", org:"RMIT Information Technology Services (ITS), Melbourne, VIC", dates:"Jul 2025 – Jun 2026  ",
   deploy:"Completed 12 software deployments through the Microsoft Intune Company Portal for ~6,000 researcher-managed laptops, using PowerShell deployment scripts.",
   gen:"Developed Python automation that generates deployment scripts and testing pipelines, reducing manual deployment effort by ~70%.",
   test:"Authored automated test suites with Robot Framework and Python to validate software deployments.",
@@ -101,7 +113,7 @@ const intern = {
   stack:"Python, PowerShell, Robot Framework, Jira/Confluence APIs, Microsoft Intune, Git, Bitbucket, Linux/Bash"
 };
 const cap = {
-  title:"Automated AWS Image Factory (Capstone Project)", org:"RACE, RMIT University", dates:"Jul 2026 – Nov 2026",
+  title:"Automated AWS Image Factory (Capstone Project)", org:"RACE, RMIT University", dates:"Jul 2026   – Nov 2026  ",
   b:["Designed and built an automated AWS AMI build pipeline using Packer and Ansible, orchestrated by GitHub Actions with OIDC authentication in place of long-lived AWS credentials.",
      "Migrated a legacy EC2 Image Builder process to the automated pipeline.",
      "Implemented logic to detect configuration changes and trigger image rebuilds when required, recorded build history in DynamoDB, and managed previous AMIs.",
@@ -111,26 +123,27 @@ const cap = {
 const P = {
   browse:["BrowseStyle – ML Fashion Recommendation Web App","https://github.com/Ankita001812/BrowseStyle/","Python, Flask, Scikit-learn, NLP","Created a Flask web application that uses a machine learning model to analyse product reviews and generate recommendations."],
   airbnb:["AirBnB – Full-Stack Property Booking Platform","https://github.com/Ankita001812/AirBnB","React.js, Node.js, Express.js, MongoDB","Delivered a full-stack property booking platform with end-to-end database integration."],
-  peace:["Peace – Full-Stack Entertainment Web Application","https://github.com/Ankita001812/Peace","Java, Spring Boot, Thymeleaf, MySQL, Bootstrap","Engineered backend services, database connectivity and dynamic web pages for an entertainment platform."],
+  devpilot:["DevPilot – AI Coding Assistant for VS Code (In Progress)","","TypeScript, Python, Flask, Docker, GitHub Actions",["Building a VS Code extension that sends selected code and editor errors to a Flask API and shows AI fix suggestions, so the developer approves before any change is made."]],
+  maze:["Algorithms Through Maze","https://github.com/Ankita001812/Algorithms-through-maze","C++","Demonstrated the use of different algorithms to generate and solve mazes."],
   greenie:["Greenie – E-Commerce Website","https://ankita001812.github.io/Greenie/","React.js, Express.js, MySQL, Bootstrap","Produced a responsive e-commerce website with functional features and a modern UI."]
 };
 const V = {
- master:{tab:"Master", head:"Graduate Software &amp; Automation Engineer",
+ master:{tab:"Master", head:"Software &amp; Automation Engineer",
+  sum:"Software Engineer with hands-on industry experience in software deployment, automation, testing, cloud technologies and machine learning. Skilled in developing software solutions, streamlining processes and integrating APIs, with a strong problem-solving mindset and eagerness to learn new technologies.",
+  skills:[["Languages","Python, PowerShell, Java, JavaScript, TypeScript, SQL, C++"],["Cloud &amp; DevOps","AWS (IAM, SSM, S3, DynamoDB, EC2 Image Builder), Terraform, Packer, Ansible, GitHub Actions (CI/CD), OIDC, Docker"],["Automation &amp; Testing","Robot Framework, Python automation, Jira/Confluence API integration, Microsoft Intune"],["Backend &amp; Web","Flask, Node.js, Express.js, React.js, MongoDB, MySQL"],["Tools","Git, Bitbucket, Linux/Bash"],["Machine Learning","Scikit-learn"]],
+  exp:["deploy","gen","test","api","sec"], proj:["devpilot","browse","airbnb","greenie","maze"]},
+ A:{tab:"A · Software Engineer", head:"Software Engineer",
   sum:"Software Engineer with hands-on industry experience in software development, automation, testing, cloud technologies and machine learning. Skilled in developing software solutions, streamlining processes and integrating APIs, with a strong problem-solving mindset and eagerness to learn new technologies.",
-  skills:[["Languages","Python, PowerShell, Java, JavaScript, SQL, C++"],["Cloud &amp; DevOps","AWS (IAM, SSM, S3, DynamoDB, EC2 Image Builder), Terraform, Packer, Ansible, GitHub Actions (CI/CD), OIDC, Docker"],["Automation &amp; Testing","Robot Framework, Python automation, Jira/Confluence API integration, Microsoft Intune"],["Backend &amp; Web","Spring Boot, Flask, Node.js, Express.js, React.js, MongoDB, MySQL"],["Tools","Git, Bitbucket, Linux/Bash"],["Machine Learning","Scikit-learn"]],
-  exp:["deploy","gen","test","api","sec"], proj:["cap","browse","airbnb","peace","greenie"]},
- A:{tab:"A · Software Engineer", head:"Graduate Software Engineer",
+  skills:[["Languages","Python, Java, JavaScript, TypeScript, SQL, C++, PowerShell"],["Backend &amp; Web","Flask, Node.js, Express.js, React.js, MongoDB, MySQL"],["Automation &amp; Testing","Robot Framework, Python automation, Jira/Confluence API integration"],["Cloud &amp; DevOps","AWS (IAM, SSM, S3, DynamoDB), Terraform, Packer, Ansible, GitHub Actions (CI/CD), Docker"],["Tools","Git, Bitbucket, Linux/Bash"],["Machine Learning","Scikit-learn"]],
+  exp:["gen","api","test","deploy","sec"], proj:["devpilot","browse","airbnb","greenie","maze"]},
+ B:{tab:"B · Backend / Python", head:"Python &amp; Backend Developer",
   sum:"Software Engineer with hands-on industry experience in software development, automation, testing, cloud technologies and machine learning. Skilled in developing software solutions, streamlining processes and integrating APIs, with a strong problem-solving mindset and eagerness to learn new technologies.",
-  skills:[["Languages","Python, Java, JavaScript, SQL, C++, PowerShell"],["Backend &amp; Web","Spring Boot, Flask, Node.js, Express.js, React.js, MongoDB, MySQL"],["Automation &amp; Testing","Robot Framework, Python automation, Jira/Confluence API integration"],["Cloud &amp; DevOps","AWS (IAM, SSM, S3, DynamoDB), Terraform, Packer, Ansible, GitHub Actions (CI/CD), Docker"],["Tools","Git, Bitbucket, Linux/Bash"],["Machine Learning","Scikit-learn"]],
-  exp:["gen","api","test","deploy","sec"], proj:["browse","peace","airbnb","cap","greenie"]},
- B:{tab:"B · Backend / Python", head:"Graduate Python &amp; Backend Developer",
+  skills:[["Languages","Python, SQL, JavaScript, TypeScript, Java, PowerShell, C++"],["Backend &amp; Databases","Flask, Node.js, Express.js, MongoDB, MySQL, API integration (Jira, Confluence)"],["Automation &amp; Testing","Python automation, Robot Framework, PowerShell"],["Cloud &amp; DevOps","AWS (IAM, S3, DynamoDB), GitHub Actions (CI/CD), Terraform, Docker"],["Tools","Git, Bitbucket, Linux/Bash"],["Frontend &amp; ML","React.js, Scikit-learn"]],
+  exp:["api","gen","test","deploy","sec"], proj:["devpilot","browse","airbnb","greenie","maze"]},
+ C:{tab:"C · Cloud / DevOps", head:"Cloud, DevOps &amp; Automation Engineer",
   sum:"Software Engineer with hands-on industry experience in software development, automation, testing, cloud technologies and machine learning. Skilled in developing software solutions, streamlining processes and integrating APIs, with a strong problem-solving mindset and eagerness to learn new technologies.",
-  skills:[["Languages","Python, SQL, JavaScript, Java, PowerShell, C++"],["Backend &amp; Databases","Flask, Node.js, Express.js, Spring Boot, MongoDB, MySQL, API integration (Jira, Confluence)"],["Automation &amp; Testing","Python automation, Robot Framework, PowerShell"],["Cloud &amp; DevOps","AWS (IAM, S3, DynamoDB), GitHub Actions (CI/CD), Terraform, Docker"],["Tools","Git, Bitbucket, Linux/Bash"],["Frontend &amp; ML","React.js, Scikit-learn"]],
-  exp:["api","gen","test","deploy","sec"], proj:["browse","airbnb","peace","cap","greenie"]},
- C:{tab:"C · Cloud / DevOps", head:"Graduate Cloud, DevOps &amp; Automation Engineer",
-  sum:"Software Engineer with hands-on industry experience in software development, automation, testing, cloud technologies and machine learning. Skilled in developing software solutions, streamlining processes and integrating APIs, with a strong problem-solving mindset and eagerness to learn new technologies.",
-  skills:[["Cloud &amp; DevOps","AWS (IAM, SSM, S3, DynamoDB, EC2 Image Builder), Terraform, Packer, Ansible, Docker"],["CI/CD &amp; Automation","GitHub Actions, OIDC, Python automation, PowerShell, Robot Framework, Microsoft Intune"],["Languages","Python, PowerShell, Bash, Java, JavaScript, SQL, C++"],["Tools","Git, Bitbucket, Linux, Jira/Confluence API integration"],["Web &amp; ML","Spring Boot, Flask, Node.js, Express.js, React.js, MongoDB, MySQL, Scikit-learn"]],
-  exp:["deploy","gen","test","sec","api"], proj:["cap","airbnb","browse","peace"]}
+  skills:[["Cloud &amp; DevOps","AWS (IAM, SSM, S3, DynamoDB, EC2 Image Builder), Terraform, Packer, Ansible, Docker"],["CI/CD &amp; Automation","GitHub Actions, OIDC, Python automation, PowerShell, Robot Framework, Microsoft Intune"],["Languages","Python, PowerShell, Bash, Java, JavaScript, TypeScript, SQL, C++"],["Tools","Git, Bitbucket, Linux, Jira/Confluence API integration"],["Web &amp; ML","Flask, Node.js, Express.js, React.js, MongoDB, MySQL, Scikit-learn"]],
+  exp:["deploy","gen","test","sec","api"], proj:["devpilot","airbnb","browse"]}
 };
 const checks = ["Pick the version that matches the job title (A, B or C). Use Master if unsure.","Check the ad’s work-rights line. Skip roles that need citizenship or PR.","Match 3 to 5 keywords from the ad to your CV, only where true.","Upload the PDF unless the portal asks for Word.","Give the file a clear name, e.g. Ankita-Nag-Ayshi-CV-C.pdf.","Answer work-rights questions on the form exactly and truthfully.","Check that the LinkedIn and GitHub links open.","Check the headline and dates match your LinkedIn."];
 
@@ -146,10 +159,11 @@ function render(key){
   h += "<h2>Projects</h2>";
   h += v.proj.filter(k => k !== "cap").map(k => {
     const p = P[k];
-    return "<div class='proj'><a href='"+p[1]+"' target='_blank'>"+p[0]+"</a> <span>| "+p[2]+"</span></div><ul>"+li([p[3]])+"</ul>";
+    const nm = p[1] ? "<a href='"+p[1]+"' target='_blank'>"+p[0]+"</a>" : "<a>"+p[0]+"</a>";
+    return "<div class='proj'>"+nm+" <span>| "+p[2]+"</span></div><ul>"+li([].concat(p[3]))+"</ul>";
   }).join("");
-  h += "<h2>Education</h2><div class='row'><b>Bachelor of Software Engineering, RMIT University, Melbourne</b><i>2023 – Nov 2026</i></div>";
-  h += "<h2>Additional Experience</h2><div class='row'><b>Casual Event Staff, Spark Event Group</b><i>Jul 2023 – Present</i></div><div class='row'><b>Event Staff, Australian Open</b><i>2025</i></div>";
+  h += "<h2>Education</h2><div class='row'><b>Bachelor of Software Engineering, RMIT University, Melbourne</b><i>Feb 2023 – Nov 2026  </i></div>";
+  h += "<h2>Additional Experience</h2><div class='row'><b>Casual Event Staff, Spark Event Group</b><i>Jul 2023 – Present</i></div><div class='row'><b>Event Staff, Australian Open</b><i>Jan 2025</i></div>";
   document.getElementById("cv").innerHTML = h;
 }
 
